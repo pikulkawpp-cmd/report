@@ -1,37 +1,94 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <!-- ไอคอนแสดงบนแท็บเว็บไซต์ (Favicon) -->
-    <link rel="icon" type="image/png" href="47-2.png">
-    <!-- สำหรับรองรับอุปกรณ์ Apple / iOS -->
-    <link rel="apple-touch-icon" href="47-2.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หน้าแรก - ระบบรายงานตัวทหารเรือ</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
-<body class="home-body">
-    <div class="container home-container">
-        <div class="header">
-            <div class="logo-container">
-                <img src="47-2.png" alt="โลโก้หน่วยงาน" class="header-logo">
-            </div>
-            <h2>⚓ ครูฝึกทหารเรือ ⚓</h2>
-            <p>กรมยุทธศึกษาทหารเรือ</p>
-        </div>
+    <title>ปิดปรับปรุงระบบ - กำลังดำเนินการอัปเกรด</title>
+    <!-- นำเข้าฟอนต์ Prompt จาก Google Fonts เพื่อความสวยงาม -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Prompt', sans-serif;
+        }
 
-        <div class="welcome-content">
-            <div class="welcome-card">
-                <h3>ยินดีต้อนรับสู่ระบบออนไลน์</h3>
-                <p>กรุณากดปุ่มด้านล่างเพื่อเข้าสู่ระบบบันทึกรายงานตัวประจำสัปดาห์ของครูฝึก</p>
-            </div>
-            
-            <a href="report.html" class="btn-primary-link">
-                <span>เข้าสู่ระบบรายงานตัวประจำสัปดาห์</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </a>
-        </div>
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 50px 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        /* อนิเมชันไอคอนเกียร์หมุน */
+        .gear-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: spin 6s linear infinite;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        p {
+            font-size: 16px;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="gear-icon">⚙️</div>
+        <h1>กำลังปรับปรุงระบบ</h1>
+        <p>เรากำลังพัฒนาและอัปเกรดระบบให้ดียิ่งขึ้น<br>ขออภัยในความไม่สะดวกมา ณ ที่นี้ด้วยครับ/ค่ะ</p>
+        <div class="status-badge">จะกลับมาเปิดให้บริการเร็วๆ นี้</div>
     </div>
+
 </body>
 </html>
