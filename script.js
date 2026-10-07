@@ -14,6 +14,7 @@ document.getElementById('reportForm').addEventListener('submit', function(e) {
         rank: document.getElementById('rank').value,
         fullname: document.getElementById('fullname').value,
         discord: document.getElementById('discord').value,
+        position: document.getElementById('position').value,
         status: document.getElementById('status').value,
         problem: document.getElementById('problem').value
     };
