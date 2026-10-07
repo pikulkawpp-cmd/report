@@ -1,5 +1,5 @@
 // นำ URL ที่ได้จากการ Deploy Google Apps Script มาใส่ตรงนี้
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwV4bhKapIV1yfv9If08fFow6NNcfUaTGsuIY-ReZCHDjjF95hBQO801xVjzonn32Me/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwP9uN0lHjBNR3seYVOOFH5b9Nqb-Mf1PZ0xHJebfLU2m86JUoeKviRd0czpQwXBu7N/exec";
 
 document.getElementById('reportForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -13,7 +13,7 @@ document.getElementById('reportForm').addEventListener('submit', function(e) {
         week: document.getElementById('week').value,
         rank: document.getElementById('rank').value,
         fullname: document.getElementById('fullname').value,
-        position: document.getElementById('position').value,
+        discord: document.getElementById('discord').value,
         status: document.getElementById('status').value,
         problem: document.getElementById('problem').value
     };
