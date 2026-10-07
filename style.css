@@ -1,0 +1,475 @@
+/* รีเซ็ตค่าพื้นฐาน */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sarabun', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* พื้นหลังธีมกองทัพเรือยามค่ำคืน (Deep Navy & Cyber Glow) */
+.home-body {
+    background: radial-gradient(circle at 50% 20%, #172a45 0%, #0a1128 60%, #030712 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* กรอบการ์ดหลัก สไตล์กระจกฝ้าสะท้อนแสง */
+.container.home-container {
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    width: 100%;
+    max-width: 480px;
+    padding: 45px 35px;
+    border-radius: 28px;
+    border: 1px solid rgba(56, 189, 248, 0.2); /* ขอบเรืองแสงสีฟ้าอ่อน */
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.6),
+        0 0 40px rgba(14, 165, 233, 0.1) inset; /* แสงสะท้อนด้านใน */
+    text-align: center;
+    animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ส่วนจัดวางโลโก้ด้านบนสุด พร้อมเอฟเฟกต์วงแหวนเรืองแสง */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.logo-container::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.4), transparent);
+    z-index: -1;
+    filter: blur(8px);
+    animation: pulseGlow 3s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    from { transform: scale(0.95); opacity: 0.6; }
+    to { transform: scale(1.1); opacity: 1; }
+}
+
+.header-logo {
+    width: 95px;
+    height: 95px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(56, 189, 248, 0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    background-color: #0f172a;
+}
+
+/* ส่วนหัวข้อ (Header) */
+.header {
+    margin-bottom: 30px;
+}
+
+.header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header p {
+    font-size: 14px;
+    color: #94a3b8;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+}
+
+/* ส่วนการ์ดต้อนรับ */
+.welcome-content {
+    margin-top: 10px;
+}
+
+.welcome-card {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 22px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) inset;
+    transition: transform 0.3s ease;
+}
+
+.welcome-card:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.welcome-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #38bdf8; /* เน้นหัวข้อต้อนรับด้วยสีฟ้าสด */
+}
+
+.welcome-card p {
+    font-size: 14px;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* ปุ่มกดระบบรายงานตัวประจำสัปดาห์ (Gradient + Hover Animation) */
+.btn-primary-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+    color: white;
+    text-decoration: none;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(14, 165, 233, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* แสงสะท้อนวิ่งผ่านปุ่มเวลา Hover */
+.btn-primary-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn-primary-link:hover::before {
+    left: 100%;
+}
+
+.btn-primary-link:hover {
+    background: linear-gradient(135deg, #0284c7 0%, #1d4ed8 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(14, 165, 233, 0.5);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary-link svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-primary-link:hover svg {
+    transform: translateX(4px); /* ขยับลูกศรชี้ไปข้างหน้าเล็กน้อยเมื่อเอาเมาส์ชี้ */
+}
+
+/* Responsive รองรับหน้าจอมือถือ */
+@media (max-width: 480px) {
+    .home-body {
+        padding: 12px;
+    }
+    .container.home-container {
+        padding: 30px 20px;
+        border-radius: 22px;
+    }
+    .header h2 {
+        font-size: 22px;
+    }
+}
+
+/* รีเซ็ตค่าพื้นฐาน */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sarabun', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* พื้นหลังธีมทหารเรือยามค่ำคืน (Deep Navy & Cyber Glow) */
+body {
+    background: radial-gradient(circle at 50% 20%, #172a45 0%, #0a1128 60%, #030712 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    color: #ffffff;
+}
+
+/* กรอบการ์ดหลัก สไตล์กระจกฝ้า (Glassmorphism) */
+.container {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 28px;
+    border: 1px solid rgba(56, 189, 248, 0.2); /* ขอบเรืองแสงสีฟ้าอ่อน */
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.6),
+        0 0 40px rgba(14, 165, 233, 0.1) inset;
+    animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ส่วนจัดวางโลโก้ด้านบนสุด พร้อมเอฟเฟกต์เรืองแสง */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.logo-container::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.4), transparent);
+    z-index: -1;
+    filter: blur(8px);
+    animation: pulseGlow 3s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    from { transform: scale(0.95); opacity: 0.6; }
+    to { transform: scale(1.1); opacity: 1; }
+}
+
+.header-logo {
+    width: 95px;
+    height: 95px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(56, 189, 248, 0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    background-color: #0f172a;
+}
+
+/* ส่วนหัวข้อ (Header) */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header p {
+    font-size: 14px;
+    color: #94a3b8;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+}
+
+/* จัดรูปแบบฟอร์ม */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* ป้ายชื่อหัวข้อฟิลด์ */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #38bdf8; /* เน้นสีฟ้าสดให้อ่านง่าย */
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ช่องกรอกข้อมูล, Select และ Textarea สไตล์กระจกใส */
+input[type="text"], select, textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    font-size: 15px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    appearance: none;
+}
+
+/* ตกแต่งลูกศรในช่องเลือก (Select) */
+select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3Cpolyline points='6 9 12 15 18 9'%3e%3C/polyline%3e%3C/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+select option {
+    background-color: #0f172a;
+    color: #ffffff;
+}
+
+/* เอฟเฟกต์เวลาคลิกใช้งานช่องกรอกข้อมูล (Focus) */
+input[type="text"]:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #0ea5e9;
+    background: rgba(30, 41, 59, 0.8);
+    box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.25);
+}
+
+input::placeholder, textarea::placeholder {
+    color: #64748b;
+}
+
+textarea {
+    resize: none;
+    min-height: 100px;
+}
+
+/* ปุ่มส่งรายงานตัว (Gradient + Hover Animation) */
+button[type="submit"] {
+    width: 100%;
+    background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px rgba(14, 165, 233, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+button[type="submit"]:hover::before {
+    left: 100%;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #0284c7 0%, #1d4ed8 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(14, 165, 233, 0.5);
+}
+
+button[type="submit"]:disabled {
+    background: #334155;
+    color: #64748b;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* ข้อความสถานะการโหลดและแจ้งเตือน */
+.loading {
+    text-align: center;
+    margin-top: 20px;
+    color: #38bdf8;
+    font-weight: 500;
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 14px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.message.success {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.message.error {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive สำหรับหน้าจอมือถือ */
+@media (max-width: 576px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        padding: 25px 20px;
+        border-radius: 22px;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .header h2 {
+        font-size: 22px;
+    }
+}

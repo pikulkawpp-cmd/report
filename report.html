@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบรายงานตัวประจำสัปดาห์ - ครูฝึกทหารเรือ</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts สำหรับฟอนต์ภาษาไทย -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div class="header">
+            <div class="logo-container">
+                <img src="47-2.png" alt="โลโก้หน่วยงาน" class="header-logo">
+            </div>
+            <h2>⚓ ระบบรายงานตัวประจำสัปดาห์</h2>
+            <p>กองครูฝึกทหารเรือ กรมยุทธศึกษาทหารเรือ</p>
+        </div>
+
+        <form id="reportForm">
+            <div class="form-group">
+                <label for="week">ประจำสัปดาห์ที่ / ห้วงวันที่:</label>
+                <input type="text" id="week" name="week" placeholder="เช่น สัปดาห์ที่ 1 (1-5 ต.ค. 2026)" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="rank">ยศ:</label>
+                    <select id="rank" name="rank" required>
+                        <option value="">-- เลือกยศ / ตำแหน่ง --</option>
+                        <option value="จ่าตรี">จ่าตรี</option>
+                        <option value="จ่าโท">จ่าโท</option>
+                        <option value="จ่าเอก">จ่าเอก</option>
+                        <option value="พันจ่าตรี">พันจ่าตรี</option>
+                        <option value="พันจ่าโท">พันจ่าโท</option>
+                        <option value="พันจ่าเอก">พันจ่าเอก</option>
+                        <option value="พันจ่าเอกพิเศษ">พันจ่าเอกพิเศษ</option>
+                        <option value="นักเรียนนายเรือ">นักเรียนนายเรือ</option>
+                        <option value="เรือตรี">เรือตรี</option>
+                        <option value="เรือโท">เรือโท</option>
+                        <option value="เรือเอก">เรือเอก</option>
+                        <option value="นาวาตรี">นาวาตรี</option>
+                        <option value="นาวาโท">นาวาโท</option>
+                        <option value="นาวาเอก">นาวาเอก</option>
+                        <option value="นาวาเอกพิเศษ">นาวาเอกพิเศษ</option>
+                        <option value="พลเรือตรี">พลเรือตรี</option>
+                        <option value="พลเรือโท">พลเรือโท</option>
+                        <option value="พลเรือเอก">พลเรือเอก</option>
+                        <option value="จอมพลเรือ">จอมพลเรือ</option>
+                        <option value="รองนายกรัฐมนตรี">รองนายกรัฐมนตรี</option>
+                        <option value="นายกรัฐมนตรี">นายกรัฐมนตรี</option>
+                        <option value="หม่อมราชวงศ์">หม่อมราชวงศ์</option>
+                        <option value="หม่อมเจ้า">หม่อมเจ้า</option>
+                        <option value="พระองค์เจ้า">พระองค์เจ้า</option>
+                        <option value="เจ้าฟ้า">เจ้าฟ้า</option>
+                        <option value="สมเด็จพระบรมโอรสาธิราช">สมเด็จพระบรมโอรสาธิราช</option>
+                        <option value="พระบรมราชินี">พระบรมราชินี</option>
+                        <option value="พระมหากษัตริย์">พระมหากษัตริย์</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fullname">ชื่อ Roblox:</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="ระบุชื่อ Roblox" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="position">แผนกที่อยู่:</label>
+                <input type="text" id="position" name="position" placeholder="เช่น คัดสรร / ฝึกอบรมหลักสูตร" required>
+            </div>
+
+            <div class="form-group">
+                <label for="status">สถานะการปฏิบัติงาน / ผลการฝึก:</label>
+                <textarea id="status" name="status" rows="4" placeholder="สรุปผลการปฏิบัติงาน สัปดาห์นี้...ผลงาน รวมทั้งหมด ได้..ผลงาน" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="problem">ปัญหาข้อขัดข้อง (ถ้ามี):</label>
+                <textarea id="problem" name="problem" rows="2" placeholder="-"></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn">ส่งรายงานตัว</button>
+        </form>
+        
+        <div id="loading" class="loading hidden">กำลังบันทึกข้อมูล... กรุณารอสักครู่</div>
+        <div id="responseMessage" class="message hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
