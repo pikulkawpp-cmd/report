@@ -1,5 +1,5 @@
 // นำ URL ที่ได้จากการ Deploy Google Apps Script มาใส่ตรงนี้
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwP9uN0lHjBNR3seYVOOFH5b9Nqb-Mf1PZ0xHJebfLU2m86JUoeKviRd0czpQwXBu7N/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzGXdi6aLqunGU5MrYxF4MLZAFE77Ka5vCnOc_gB0KwUnKmKu_PeFNdpJ05yYf8uyY-/exec";
 
 document.getElementById('reportForm').addEventListener('submit', function(e) {
     e.preventDefault();
